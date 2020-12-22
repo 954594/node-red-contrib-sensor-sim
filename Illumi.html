@@ -1,0 +1,64 @@
+<script type="text/html" data-help-name="Illumi">
+    <p>照度センサーの擬似データを作成します</p>
+</script>
+
+<script type="text/html" data-template-name="Illumi">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name </label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-OriginalID"><i class="fa fa-tag"></i> OriginalID </label>
+        <input type="text" minlength="8" maxlength="8" id="node-input-OriginalID" placeholder="OriginalID">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-Svc"><i class="fa fa-tag"></i> 供給電圧 </label>
+        <input type="text" id="node-input-Svc" placeholder="0 ～ 5.1 ランダム:9">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-Illumi1"><i class="fa fa-tag"></i> 照度1(0 ～ 510 lx) </label>
+        <input type="text" id="node-input-Illumi1" placeholder="0 ～ 510.00 ランダム:9999">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-Illumi2"><i class="fa fa-tag"></i> 照度2(0 ～ 1020 lx) </label>
+        <input type="text" id="node-input-Illumi2" placeholder="0 ～ 1020.00 ランダム:9999">
+    </div>
+
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('Illumi',{
+        category: 'SensorSimu',
+        defaults: {
+            name: {required:false},
+            OriginalID: {value:"04004421", required:true},
+            Svc: {required:true},
+            Illumi1: {required:true},
+            Illumi2: {required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "publish.png",
+        allign: "right",
+        label: function() {
+            return this.name || "Illumi";
+        },
+        labelStyle: function() {
+            return "node_label_italic";
+        },
+        oneditprepare: function() {
+
+        },
+        oneditsave: function() {
+
+        },
+        oneditresize: function(size) {
+
+        }
+});
+</script>

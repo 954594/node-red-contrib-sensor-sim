@@ -1,0 +1,58 @@
+<script type="text/html" data-help-name="TmpHum">
+    <p>温湿度センサーの擬似データを作成します</p>
+</script>
+
+<script type="text/html" data-template-name="TmpHum">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name </label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-OriginalID"><i class="fa fa-tag"></i> OriginalID </label>
+        <input type="text" minlength="8" maxlength="8" id="node-input-OriginalID" placeholder="OriginalID">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-Tmp"><i class="fa fa-tag"></i> 温度 </label>
+        <input type="text" id="node-input-Tmp" placeholder="0.00 ～ 60.00 ランダム:999">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-Hum"><i class="fa fa-tag"></i> 湿度 </label>
+        <input type="text" id="node-input-Hum" placeholder="0.00 ～ 100.00 ランダム:999">
+    </div>
+
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('TmpHum',{
+        category: 'SensorSimu',
+        defaults: {
+            name: {required:false},
+            OriginalID: {value:"0400cb46", required:true},
+            Tmp: {required:true},
+            Hum: {required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "publish.png",
+        allign: "right",
+        label: function() {
+            return this.name || "TmpHum";
+        },
+        labelStyle: function() {
+            return "node_label_italic";
+        },
+        oneditprepare: function() {
+
+        },
+        oneditsave: function() {
+
+        },
+        oneditresize: function(size) {
+
+        }
+});
+</script>
